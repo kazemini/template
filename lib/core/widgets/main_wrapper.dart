@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:template/config/theme/theme_cubit.dart';
+import 'package:template/core/interface/app_router.dart';
 import 'package:template/core/widgets/scaffold_messenger.dart';
+
+
 // TODO this page only for test, pls convert to clean arch :)
+//? contain page route & change theme test ;)
 
 class MainWrapper extends StatefulWidget {
   const MainWrapper({Key? key}) : super(key: key);
@@ -19,7 +23,18 @@ class _MainWrapperState extends State<MainWrapper> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          children: const [],
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(AppRouter().call(name: '/second'));
+                  },
+                  child: const Text('بریم صفحه دوم')
+
+              ),
+            )
+          ],
         ),
       ),
       floatingActionButton: BlocConsumer<ThemeCubit, ThemeState>(

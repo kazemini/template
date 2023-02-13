@@ -5,7 +5,7 @@ ScaffoldFeatureController<SnackBar, SnackBarClosedReason> scaffoldMessenger(
   return ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       content: Text(message),
-      behavior: SnackBarBehavior.floating,
+      behavior: SnackBarBehavior.fixed,
       elevation: 10,
       duration: const Duration(seconds: 2),
     ),
