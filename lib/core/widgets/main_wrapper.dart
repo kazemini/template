@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:template/config/theme/theme_cubit.dart';
 import 'package:template/core/interface/app_router.dart';
 import 'package:template/core/widgets/scaffold_messenger.dart';
+import 'package:template/locator.dart';
 
 
 // TODO this page only for test, pls convert to clean arch :)
@@ -28,7 +29,7 @@ class _MainWrapperState extends State<MainWrapper> {
             Center(
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).push(AppRouter().call(name: '/second'));
+                    Navigator.of(context).push(locator<AppRouter>().call(name:'/second'));
                   },
                   child: const Text('بریم صفحه دوم')
 

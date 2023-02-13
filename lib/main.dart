@@ -4,8 +4,10 @@ import 'package:template/config/theme/app_theme.dart';
 
 import 'config/theme/theme_cubit.dart';
 import 'core/widgets/main_wrapper.dart';
+import 'locator.dart';
 
-void main() {
+void main() async{
+  await setup();
   runApp(const MyApp());
 }
 

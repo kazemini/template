@@ -5,8 +5,12 @@ class SecondPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('صفحه 2')),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('page 2'),
+      ),
+      body: const Center(child: Text('صفحه 2')),
     );
   }
+
 }

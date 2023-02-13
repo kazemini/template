@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Constants{
+class Constants {
 
   //? Theme
   static const bool isMaterial3 = true;
