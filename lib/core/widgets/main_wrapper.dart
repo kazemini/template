@@ -5,6 +5,8 @@ import 'package:template/core/interface/app_router.dart';
 import 'package:template/core/widgets/scaffold_messenger.dart';
 import 'package:template/locator.dart';
 
+import '../utils/enums.dart';
+
 
 // TODO this page only for test, pls convert to clean arch :)
 //? contain page route & change theme test ;)
@@ -32,28 +34,37 @@ class _MainWrapperState extends State<MainWrapper> {
                     Navigator.of(context).push(locator<AppRouter>().call(name:'/second'));
                   },
                   child: const Text('بریم صفحه دوم')
-
               ),
-            )
+            ),
+
+            Center(
+              child: ElevatedButton(
+                  onPressed: () {
+                    BlocProvider.of<ThemeCubit>(context).lightMode();
+                  },
+                  child: const Text('حالت روشن')
+              ),
+            ),
+
+            Center(
+              child: ElevatedButton(
+                  onPressed: () {
+                    BlocProvider.of<ThemeCubit>(context).darkMode();
+                  },
+                  child: const Text('حالت تیره')
+              ),
+            ),
+
+            Center(
+              child: ElevatedButton(
+                  onPressed: () {
+                    BlocProvider.of<ThemeCubit>(context).system();
+                  },
+                  child: const Text('سیستم')
+              ),
+            ),
           ],
         ),
-      ),
-      floatingActionButton: BlocConsumer<ThemeCubit, ThemeState>(
-        listener: (context, state) {
-          scaffoldMessenger(context, state.themeEnum.name);
-        },
-        builder: (context, state) {
-          return FloatingActionButton(
-            onPressed: () {
-             if(state.themeEnum.name == ThemeEnum.light.name) {
-               BlocProvider.of<ThemeCubit>(context).darkMode();
-             } else {
-               BlocProvider.of<ThemeCubit>(context).lightMode();
-             }
-            },
-            child: const Icon(Icons.theater_comedy),
-          );
-        },
       ),
     );
   }

@@ -6,5 +6,6 @@ GetIt locator = GetIt.instance;
 
 
 setup() {
+  //? app router
   locator.registerSingleton<AppRouter>(AppRouter());
 }

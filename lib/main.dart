@@ -20,15 +20,14 @@ class MyApp extends StatelessWidget {
         providers: [
           BlocProvider(create: (themCubit) => ThemeCubit()),
         ],
-        child: BlocConsumer<ThemeCubit, ThemeState>(
-          listener: (context, state) {
-          },
+        child: BlocBuilder<ThemeCubit, ThemeState>(
           builder: (context, state) {
             return MaterialApp(
               title: 'Flutter Demo',
               debugShowCheckedModeBanner: false,
-              themeMode: ThemeMode.light,
-              theme: state.themeEnum.name == 'dark' ? AppTheme.darkTheme : AppTheme.lightTheme,
+              theme: AppTheme.lightTheme,
+              darkTheme: AppTheme.darkTheme,
+              themeMode: state.themeMode,
               home: const MainWrapper(),
             );
           },

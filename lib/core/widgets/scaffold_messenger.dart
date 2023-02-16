@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // TODO clean arch :)
-ScaffoldFeatureController<SnackBar, SnackBarClosedReason> scaffoldMessenger(
+ScaffoldFeatureController<SnackBar, SnackBarClosedReason> snackMessage(
     BuildContext context, String message) {
   return ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
