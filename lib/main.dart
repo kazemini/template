@@ -1,8 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:template/config/theme/app_theme.dart';
+import 'package:template/config/theme/constants_config.dart';
 
 import 'config/controller/http_config.dart';
 import 'config/theme/theme_cubit.dart';
@@ -14,11 +16,11 @@ void main() async {
   HttpOverrides.global = MyHttpOverrides();
 
   await setup();
-  runApp( MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
-    MyApp({super.key});
+    const MyApp({super.key});
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -27,6 +29,14 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    // * Force Portrait InterFace
+    if(ConfigConstants.alwaysPortrait){
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
+    }
+
     return MultiBlocProvider(
         providers: [
           BlocProvider(create: (themCubit) => ThemeCubit()),

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-import '../../core/utils/constants.dart';
+import 'constants_config.dart';
 
 class AppTheme {
   static get lightTheme => ThemeData(
       brightness: Brightness.light,
-      colorSchemeSeed: CoreConstants.colorScheme,
-      useMaterial3: CoreConstants.isMaterial3,
-      fontFamily: CoreConstants.fontFamily);
+      colorSchemeSeed: ConfigConstants.colorScheme,
+      useMaterial3: ConfigConstants.isMaterial3,
+      fontFamily: ConfigConstants.fontFamily);
 
   static get darkTheme => ThemeData(
       brightness: Brightness.dark,
-      colorSchemeSeed: CoreConstants.colorScheme,
-      useMaterial3: CoreConstants.isMaterial3,
-      fontFamily: CoreConstants.fontFamily);
+      colorSchemeSeed: ConfigConstants.colorScheme,
+      useMaterial3: ConfigConstants.isMaterial3,
+      fontFamily: ConfigConstants.fontFamily);
 }

@@ -1,11 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:template/core/utils/constants.dart';
+
+import 'constants_config.dart';
 
 part 'theme_state.dart';
 
 class ThemeCubit extends Cubit<ThemeState> {
-  ThemeCubit() : super( ThemeState(CoreConstants.themMode));
+  ThemeCubit() : super( ThemeState(ConfigConstants.defaultTheme));
 
   void lightMode() => emit(ThemeState(ThemeMode.light));
 
