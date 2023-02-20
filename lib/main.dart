@@ -1,14 +1,18 @@
-import 'dart:ui';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:template/config/theme/app_theme.dart';
 
+import 'config/controller/http_config.dart';
 import 'config/theme/theme_cubit.dart';
 import 'core/widgets/main_wrapper.dart';
 import 'locator.dart';
 
 void main() async {
+  // *  solve internet permission problem on android api < 21
+  HttpOverrides.global = MyHttpOverrides();
+
   await setup();
   runApp( MyApp());
 }
@@ -41,3 +45,5 @@ class _MyAppState extends State<MyApp> {
         ));
   }
 }
+
+

@@ -1,9 +1,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.kazemini.template.template">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- TODO label of app  -->
    <application
         android:label="template"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+       android:usesCleartextTraffic="true"
+       tools:targetApi="m">
         <activity
             android:name=".MainActivity"
             android:exported="true"
