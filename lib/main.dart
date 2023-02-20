@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:template/config/theme/app_theme.dart';
 import 'package:template/config/theme/constants_config.dart';
 
@@ -50,6 +51,14 @@ class _MyAppState extends State<MyApp> {
               darkTheme: AppTheme.darkTheme,
               themeMode: state.themeMode,
               home: const MainWrapper(),
+
+              // * Force RTL, by default => (farsi,iran)
+              localizationsDelegates: const [
+                GlobalCupertinoLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+              ],
+              supportedLocales: const [Locale(ConfigConstants.language, ConfigConstants.country)],
             );
           },
         ));
