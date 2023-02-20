@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Constants {
+class CoreConstants {
 
   //? Theme
   static const bool isMaterial3 = true;
@@ -8,5 +8,5 @@ class Constants {
   static const fontFamily = 'Shabnam';
   //?.
 
-
+  static const themMode = ThemeMode.light;
 }

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:template/config/theme/app_theme.dart';
@@ -6,13 +8,18 @@ import 'config/theme/theme_cubit.dart';
 import 'core/widgets/main_wrapper.dart';
 import 'locator.dart';
 
-void main() async{
+void main() async {
   await setup();
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+    MyApp({super.key});
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {

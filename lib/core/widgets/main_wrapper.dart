@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:template/config/theme/theme_cubit.dart';
+import 'package:template/core/database/shared_preferences_db.dart';
 import 'package:template/core/interface/app_router.dart';
-import 'package:template/core/widgets/scaffold_messenger.dart';
 import 'package:template/locator.dart';
 
 import '../utils/enums.dart';
@@ -40,12 +40,12 @@ class _MainWrapperState extends State<MainWrapper> {
             Center(
               child: ElevatedButton(
                   onPressed: () {
+                    //SharedPreferencesDB.setThemeMode(ThemeEnum.light);
                     BlocProvider.of<ThemeCubit>(context).lightMode();
                   },
                   child: const Text('حالت روشن')
               ),
             ),
-
             Center(
               child: ElevatedButton(
                   onPressed: () {
@@ -54,13 +54,12 @@ class _MainWrapperState extends State<MainWrapper> {
                   child: const Text('حالت تیره')
               ),
             ),
-
             Center(
               child: ElevatedButton(
                   onPressed: () {
                     BlocProvider.of<ThemeCubit>(context).system();
                   },
-                  child: const Text('سیستم')
+                  child: const Text('حالت سیستم')
               ),
             ),
           ],

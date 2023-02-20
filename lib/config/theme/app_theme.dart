@@ -5,13 +5,13 @@ import '../../core/utils/constants.dart';
 class AppTheme {
   static get lightTheme => ThemeData(
       brightness: Brightness.light,
-      colorSchemeSeed: Constants.colorScheme,
-      useMaterial3: Constants.isMaterial3,
-      fontFamily: Constants.fontFamily);
+      colorSchemeSeed: CoreConstants.colorScheme,
+      useMaterial3: CoreConstants.isMaterial3,
+      fontFamily: CoreConstants.fontFamily);
 
   static get darkTheme => ThemeData(
       brightness: Brightness.dark,
-      colorSchemeSeed: Constants.colorScheme,
-      useMaterial3: Constants.isMaterial3,
-      fontFamily: Constants.fontFamily);
+      colorSchemeSeed: CoreConstants.colorScheme,
+      useMaterial3: CoreConstants.isMaterial3,
+      fontFamily: CoreConstants.fontFamily);
 }
