@@ -11,16 +11,17 @@ environment:
 
 
 dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
   get_it: ^7.2.0
   cupertino_icons: ^1.0.2
   bloc: ^8.1.1
   flutter_bloc: ^8.1.2
   equatable: ^2.0.5
-
-  flutter:
-    sdk: flutter
-  flutter_localizations:
-    sdk: flutter
+  shared_preferences: ^2.0.17
 
 dev_dependencies:
   flutter_test:

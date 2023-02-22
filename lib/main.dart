@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:template/config/theme/app_theme.dart';
 import 'package:template/config/theme/constants_config.dart';
 
@@ -17,17 +18,17 @@ void main() async {
   HttpOverrides.global = MyHttpOverrides();
 
   await setup();
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatefulWidget {
-    const MyApp({super.key});
+     MyApp({super.key});
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   @override
   Widget build(BuildContext context) {
     // * Force Portrait InterFace
