@@ -8,7 +8,7 @@ import '../utils/enums_config.dart';
 part 'theme_state.dart';
 
 class ThemeCubit extends Cubit<ThemeState> {
-  ThemeCubit() : super(ThemeState(ConfigConstants.defaultTheme));
+  ThemeCubit() : super(ThemeState(_getTheme()));
 
   void lightMode() => emit(ThemeState(ThemeMode.light));
 
@@ -16,5 +16,20 @@ class ThemeCubit extends Cubit<ThemeState> {
 
   void system() => emit(ThemeState(ThemeMode.system));
 
-  void changeTheme({required ThemeMode themeMode}) => emit(ThemeState(themeMode));
+  void changeTheme(ThemeMode themeMode) => emit(ThemeState(themeMode));
 }
+
+ThemeMode _getTheme() {
+  int theme = SharedPreferencesDB.getThemeMode();
+  switch (theme) {
+    case 0:
+      return ThemeMode.light;
+    case 1:
+      return ThemeMode.dark;
+    case 2:
+      return ThemeMode.system;
+    default:
+      return ThemeMode.light;
+  }
+}
+

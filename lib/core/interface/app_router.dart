@@ -11,7 +11,7 @@ class AppRouter extends RouterUsecase{
       case '/':
         return MaterialPageRoute(builder: (context) => const MainWrapper());
       case '/second':
-        return MaterialPageRoute(builder: (context) => const SecondPage());
+        return MaterialPageRoute(builder: (context) =>  SecondPage(data: param,));
       default:
         return MaterialPageRoute(builder: (context) => const MainWrapper());
     }

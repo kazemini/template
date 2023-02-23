@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:template/config/theme/theme_cubit.dart';
 
 class SecondPage extends StatelessWidget {
-  const SecondPage({Key? key}) : super(key: key);
+  final Map<String,dynamic> data;
+   const SecondPage({Key? key,required this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +11,7 @@ class SecondPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('page 2'),
       ),
-      body: const Center(child: Text('صفحه 2')),
+      body:  Center(child: Text(data['txt1']+data['txt2'])),
     );
   }
 
